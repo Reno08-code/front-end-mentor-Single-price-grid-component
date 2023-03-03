@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+:root {
+  --Cyan: hsl(179, 62%, 43%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  display: flex;
+  /*justify-content: center;加这个 让盒子在中间，或者去掉这个，然后在
+    container 那里加margin：0(这个更好更responsive)*/
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--Light-Gray);
+}
+ul {
+  list-style-type: none;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.wrapper {
+  display: grid;
+  border-radius: 10px;
+  background-color: white;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "a a""b c";
+  overflow: hidden;
+  margin:3rem 2rem;
+}
+
+.box{
+padding:2.5rem;
+}
+.join{
+    grid-area: a;
+    
+}
+.sub{
+    grid-area: b;
+    background-color: var(--Cyan);
+}
+.why{
+    grid-area: c;
+    background-color: hsl(179, 50%, 60%);
+}
+
+h1{
+    color:var(--Cyan);
+    font-size:1.2rem;
+    padding-bottom: 1rem;
+}
+
+.join h2{
+color:var(--Bright-Yellow);
+font-size: 1rem;
+padding-bottom: 1rem;
+}
+.join p{
+    color: var(--Grayish-Blue);
+    line-height: 1.4rem;
+}
+
+.sub h2, .why h2{
+    color: white;
+    font-size:1.2rem ;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+.sub span{
+    color:white;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.sub p{
+    color:var(--Light-Gray);
+    padding-bottom: 0.6rem;
+}
+
+.sub p:nth-child(3){
+    color:white;
+    padding-bottom: 1.5rem;
+}
+
+button{
+    display: block;
+    border: none;
+    margin-top: 1rem;
+    padding:10px 0;
+    border-radius: 5px;
+    background-color: var(--Bright-Yellow);
+    color:white;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+   width:70%;
+   box-shadow: 3px 5px 10px grey;
+  }
+
+  .why li{
+    color:white ;
+    padding-bottom: 4px ;
+
+  }
+
+  @media screen and (max-width:425px) {
+     .wrapper{
+      grid-template-columns: 100%;
+      grid-template-areas: "a""b""c";
+    }
+
+    button{
+      width: 100%;
+      margin: 0;
+    }
+  }
+
